@@ -1,7 +1,7 @@
-### *Overview*
+## **Overview**
 This website describes the activities conducted for each of the phases of this research.
 
-### [Phase 1: Spatial dynamics and drivers of land-cover change](course_project_1.html)
+### [Phase 1: Spatial dynamics and drivers of land-cover change](phase1.html)
 We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.
 
 ### Phase 2: Impacts of land-cover change 
@@ -13,7 +13,7 @@ You can @amsantac a GitHub username to generate a link to their profile. The res
 ### Support or Contact
 Having trouble with Pages? Check out the documentation at https://help.github.com/pages or contact support@github.com and we'll help you sort it out.
 
-New link [the course project](course_project_1.html) it is
+New link [the course project](phase1.html) it is
 
 
 

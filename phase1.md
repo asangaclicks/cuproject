@@ -60,4 +60,3 @@ Via figures and text, explain how one can tell the distribution is approximately
 
 
 
-

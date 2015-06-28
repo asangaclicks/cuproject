@@ -1,7 +1,7 @@
 ## **Overview**
 This website describes the activities conducted for each of the phases of this research.
 
-### Study area
+### <a name="studyarea"></a>Study area
 
 
 ### [Phase 1: Spatial dynamics and drivers of land-cover change](phase1.html)

@@ -21,8 +21,8 @@ stackLandsatCSV <- function(path, years, output){
 
 ## parameters to run the function
 path <- "C:/amsantac/PhD/Research/dissertation/data/landsat/images"
-years <- 2000:2001
-output <- "stack_2000_2001.csv"
+years <- 2000:2014
+output <- "stack_2000_2014.csv"
 
 # create the csv file for the given years
 stackLandsatCSV(path, years, output)

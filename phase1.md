@@ -2,10 +2,10 @@
 
 The first phase of this research is the analysis of the spatial dynamic and drivers of land-cover change. The following sections are shown below:
 
-[1. Data sources](#data-sources)
-[2. Methods](#methods)
-[3. Results](#results)
-[4. References](#references)
+1. [Data sources](#data-sources)
+2. [Methods](#methods)
+3. [Results](#results)
+4. [References](#references)
 
 ### Data sources 
 * Landsat 5 TM, Landsat 7 ETM+ and Landsat 8 OLI/TIRS imagery from [USGS](http://landsat.usgs.gov/index.php).
@@ -21,7 +21,7 @@ The first phase of this research is the analysis of the spatial dynamic and driv
 
 #### *Image preparation*
 * Landsat images were stacked and preprocessed using the [CLASlite](http://claslite.carnegiescience.edu/en/) software (reference to claslite). An [R script](https://github.com/amsantac/cuproject/blob/gh-pages/code/stackLandsatCSV.R) was used to create the [csv](https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/stack_2000_2014.csv) file required for stacking the Landsat images through batch processing in CLASlite.
-* Landsat images were preprocessed using the batch processing utility in CLASlite. Radiometric calibration and atmospheric correction were conducted on every Landsat image. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model to simulate the Earth's atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. The batch processing utility in CLASlite was used to conduct image calibration.  An [R script]() was used to create the [csv] file required for image calibration through batch processing in CLASlite.    
+* Landsat images were preprocessed using the batch processing utility in CLASlite. Radiometric calibration and atmospheric correction were conducted on every Landsat image. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model to simulate the Earth's atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. The batch processing utility in CLASlite was used to conduct image calibration.  An [R script]() was used to create the [csv]() file required for image calibration through batch processing in CLASlite.    
 
 ### Results 
 * In progress.

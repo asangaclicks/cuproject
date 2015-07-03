@@ -61,8 +61,8 @@
 </h4>
 
 <ul>
-<li>Landsat images were stacked and preprocessed using the <a href="http://claslite.carnegiescience.edu/en/">CLASlite</a> software (reference to claslite). An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/stackLandsatCSV.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/stack_2000_2014.csv" target="_blank">csv</a> file required for stacking the Landsat images through batch processing in CLASlite.</li>
-<li>Landsat images were preprocessed using the batch processing utility in CLASlite. Radiometric calibration and atmospheric correction were conducted on every Landsat image. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model to simulate the Earth's atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. The batch processing utility in CLASlite was used to conduct image calibration.  An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/stackLandsatCSV.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/stack_2000_2014.csv" target="_blank">csv</a> file required for image calibration through batch processing in CLASlite.<br>
+<li>Landsat images were stacked using the <a href="http://claslite.carnegiescience.edu/en/">CLASlite</a> software (<a href="#asneretal2009">Asner et al., 2009</a>). An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/stackLandsatCSV.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/stack_2000_2014.csv" target="_blank">csv</a> file required for stacking the Landsat images through batch processing in CLASlite.</li>
+<li>Radiometric calibration and atmospheric correction were conducted on every Landsat image using CLASlite. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model to simulate the Earth's atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/stackLandsatCSV.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/stack_2000_2014.csv" target="_blank">csv</a> file required for image calibration through batch processing in CLASlite.<br>
 </li>
 </ul>
 
@@ -77,7 +77,8 @@
 <a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h3>
 
 <ul>
-<li>In progress.</li>
+<li>
+<a id="asneretal2009"></a>Asner, G.P., Knapp, D.E., Balaji, A., Paez-Acosta, G. 2009. Automated mapping of tropical deforestation and forest degradation: CLASlite. Journal of Applied Remote Sensing 3: 033543.</li>
 </ul>
 
       <footer class="site-footer">

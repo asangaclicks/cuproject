@@ -24,11 +24,17 @@
 <a id="phase-1-spatial-dynamics-and-drivers-of-land-cover-change" class="anchor" href="#phase-1-spatial-dynamics-and-drivers-of-land-cover-change" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Phase 1: Spatial dynamics and drivers of land-cover change</strong>
 </h2>
 
-<p>The first phase of this research is the analysis of the spatial dynamic and drivers of land-cover change.</p>
+<p>The first phase of this research is the analysis of the spatial dynamic and drivers of land-cover change. The following sections are shown below:</p>
+
+<ol>
+<li><a href="#data-sources">Data sources</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#references">References</a></li>
+</ol>
 
 <h3>
-<a id="data-sources" class="anchor" href="#data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<a name="data"></a>Data sources</h3>
+<a id="data-sources" class="anchor" href="#data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data sources</h3>
 
 <ul>
 <li>Landsat 5 TM, Landsat 7 ETM+ and Landsat 8 OLI/TIRS imagery from <a href="http://landsat.usgs.gov/index.php">USGS</a>.</li>
@@ -37,18 +43,17 @@
 </ul>
 
 <h3>
-<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<a name="methods"></a>Methods</h3>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
 
 <h4>
 <a id="image-selection" class="anchor" href="#image-selection" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Image selection</em>
 </h4>
 
 <ul>
-<li>Landsat imagery was selected for 12 tiles for the time period between 2000 and 2016 for a total of 204 Landsat scenes. One Landsat image was selected for each tile for each year. Landsat 5 and Landsat 7 imagery was selected for years 2000 to 2011. Landsat 8 images were used for years 2013 to 2016.</li>
-<li>Landsat scenes with low or none cloud cover over the <a href="index.html#studyarea">study area</a> were preferred. Landsat 5 and Landsat 7 SLC-on scenes were preferred over Landsat 7 SLC-off scenes. Images taken during the dry season (January-March) were preferred over images taken in other months over the year.</li>
-<li>Landsat 5 and Landsat 7 imagery was selected using the <a href="http://earthexplorer.usgs.gov/">USGS EarthExplorer</a>. Landsat 8 imagery was selected using the <a href="https://libra.developmentseed.org/">Libra browser</a>.</li>
-<li>The complete list of the selected Landsat imagery can be seen <a href="https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/edit?usp=sharing" target="_blank">here</a>. This list also shows progress in image processing and offers links to each scene thumbnail.</li>
+<li>Landsat imagery was selected for 12 tiles for the time period between 2000 and 2016. One Landsat image was selected for each tile for each year, for a total of 204 Landsat scenes. Landsat 5 and Landsat 7 imagery was selected for years 2000 to 2011. Landsat 8 images were used for years 2013 to 2016.</li>
+<li>Landsat scenes with low or none cloud cover over the <a href="index.html#study-area">study area</a> were preferred. Landsat 5 and Landsat 7 SLC-on scenes were preferred over Landsat 7 SLC-off scenes. Images taken during the dry season (January-March) were preferred over images taken in other months over the year.</li>
+<li>Landsat 5 and Landsat 7 imagery was selected using the <a href="http://earthexplorer.usgs.gov/">USGS EarthExplorer</a>. Landsat 8 imagery was selected using the <a href="https://libra.developmentseed.org/">Libra browser</a>. All the imagery was downloaded using the <a href="http://earthexplorer.usgs.gov/bulk">Landsat Data Bulk Download utility</a>.</li>
+<li>The complete list of the selected Landsat imagery can be seen <a href="https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/edit?usp=sharing" target="_blank">here</a>. This list also shows cloud cover, acquisition date and progress in image processing as well as a link to each scene thumbnail.</li>
 </ul>
 
 <h4>
@@ -56,15 +61,23 @@
 </h4>
 
 <ul>
-<li>Images were preprocessed using the <a href="http://claslite.carnegiescience.edu/en/">CLASlite</a> software.</li>
+<li>Landsat images were stacked and preprocessed using the <a href="http://claslite.carnegiescience.edu/en/">CLASlite</a> software (reference to claslite). An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/stackLandsatCSV.R">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/stack_2000_2014.csv">csv</a> file required for stacking the Landsat images through batch processing in CLASlite.</li>
+<li>Landsat images were preprocessed using the batch processing utility in CLASlite. Radiometric calibration and atmospheric correction were conducted on every Landsat image. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model to simulate the Earth's atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. The batch processing utility in CLASlite was used to conduct image calibration.  An <a href="">R script</a> was used to create the <a href="">csv</a> file required for image calibration through batch processing in CLASlite.<br>
+</li>
 </ul>
 
 <h3>
-<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<a name="results"></a>Results</h3>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h3>
 
 <ul>
-<li>Landsat imagery was selected for 12 tiles for the time period between 2000 and 2016. One Landsat image was selected for each tile for each year.</li>
+<li>In progress.</li>
+</ul>
+
+<h3>
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h3>
+
+<ul>
+<li>In progress.</li>
 </ul>
 
       <footer class="site-footer">

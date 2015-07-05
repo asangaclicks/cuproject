@@ -28,25 +28,18 @@ The first phase of this research is the analysis of the spatial dynamic and driv
 
 Table 1
 
-<p><iframe id="table1" frameborder="0" scrolling="no" width=240 height=240 marginheight="0" marginwidth="0" src="https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/pubhtml?gid=2047579573&single=true"></iframe></p>
-
-https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/pubhtml?gid=1335165172&single=true
-
-style="display: block; width: 100%; height: 100%;"
+lp_t1
 
 Table 2
-r4q
-```html
-<iframe id="table2" frameborder="0" width=700 height=460 marginheight="0" marginwidth="0" src="https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/pubhtml?gid=1294784214&single=true">444</iframe>
-```
-r4r
+
+lp_t2
+
 Table 3
 
-<iframe id="table3" frameborder="0" scrolling="no" width=700 height=460 marginheight="0" marginwidth="0" src="https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/pubhtml?gid=1521379850&single=true">ttt</iframe>
+lp_t3
 
 video
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/KgLfpnPdqZw" frameborder="0" allowfullscreen></iframe>
 
 ### References 
 * <a id="asneretal2009"></a>Asner, G.P., Knapp, D.E., Balaji, A., Paez-Acosta, G. 2009. Automated mapping of tropical deforestation and forest degradation: CLASlite. Journal of Applied Remote Sensing 3: 033543.

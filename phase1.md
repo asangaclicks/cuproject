@@ -34,10 +34,6 @@ Table 2
 
 lp_t2
 
-Table 3
-
-lp_t3
-
 video
 
 

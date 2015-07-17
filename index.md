@@ -2,7 +2,7 @@
 This website describes the activities conducted for each of the phases of this research.
 
 ### Study area
-Description of the study area.
+Description of the [study area](www/map_llanos.html).
 
 ### [Phase 1: Spatial dynamics and drivers of land-cover change](phase1.html)
 We've crafted some handsome templates for you to use. Please see the description of the [data sources](phase1.html#data-sources), [methods](phase1.html#methods) and [results](phase1.html#results) for this phase.

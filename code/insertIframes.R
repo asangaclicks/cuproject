@@ -2,11 +2,11 @@ setwd("C:/amsantac/other/git/cuproject")
 
 library(XML)
 
-insertTables <- function(htmlFile, tablesFile){
+insertTables <- function(htmlFile, iframesFile){
   
-  tabLines <- readLines(tablesFile)
+  tabLines <- readLines(iframesFile)
   
-  doc <- htmlTreeParse(tablesFile)
+  doc <- htmlTreeParse(iframesFile)
   rootNode <- xmlRoot(doc)
   
   for (i in 1:length(rootNode[[1]])){
@@ -17,4 +17,5 @@ insertTables <- function(htmlFile, tablesFile){
   }  
 }
 
-suppressWarnings(insertTables("phase1.html", "iframeTables.txt"))
+suppressWarnings(insertTables("phase1.html", "other/iframeTables.txt"))
+suppressWarnings(insertTables("index.html", "other/iframeMapIndex.txt"))

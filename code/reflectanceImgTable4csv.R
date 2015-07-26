@@ -50,7 +50,7 @@ reflectanceImgTable4csv <- function(path, year, GeoTIFF = 0, Reduce_masking = 0,
     ## extract gains
     gains <- NULL
     
-    ## for Landsat 4, 5, 7
+    ## for Landsat 7
     if (Satellitei == 1){
       for (band in c(1:5, 7)){
         bandGain_1 <- strsplit(mtl[grep(paste0(" GAIN_BAND_", band), mtl)], "= ")[[1]][2]

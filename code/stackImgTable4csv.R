@@ -11,8 +11,9 @@ stackImgTable4csv <- function(path, years){
     setwd(path_y)
     foldersList <- c(foldersList, paste0(path_y, "/", list.files()))
   }
-  foldersListDF <- data.frame("LANDSAT_Folder_Names" = foldersList)
   setwd(oldwd)
+  foldersListDF <- data.frame("LANDSAT_Folder_Names" = foldersList)
+  return(foldersListDF)
 }
 
 ## set working directory: folder where the output csv files should be written

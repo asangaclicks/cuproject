@@ -24,7 +24,7 @@ years <- 2000:2014
 fname <- "stack_2000_2014.csv"
 
 ## run the function for the given years
-outDF <- stackImgTable4csv(path, years, output)
+outDF <- stackImgTable4csv(path, years)
 
 ## create the csv file
 write.csv(outDF, fname, row.names = FALSE, quote = FALSE)

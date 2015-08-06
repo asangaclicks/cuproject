@@ -20,9 +20,7 @@
     </section>
 
     <section class="main-content">
-      <h2>
-<a id="phase-1-spatial-dynamics-and-drivers-of-land-cover-change" class="anchor" href="#phase-1-spatial-dynamics-and-drivers-of-land-cover-change" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Phase 1: Spatial dynamics and drivers of land-cover change</strong>
-</h2>
+<h2><strong>Phase 1: Spatial dynamics and drivers of land-cover change</strong></h2>
 
 <p>The first phase of this research is the analysis of the spatial dynamic and drivers of land-cover change. The following sections are shown below:</p>
 
@@ -33,21 +31,16 @@
 <li><a href="#references">References</a></li>
 </ol>
 
-<h3>
-<a id="data-sources" class="anchor" href="#data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data sources</h3>
+<h3>Data sources</h3>
 
 <ul>
 <li>Landsat 5 TM, Landsat 7 ETM+ and Landsat 8 OLI/TIRS imagery from <a href="http://landsat.usgs.gov/index.php">USGS</a>.</li>
-<li>
-<a href="http://landsat.usgs.gov/tools_wrs-2_shapefile.php">WRS-2 descending grid</a>. </li>
+<li><a href="http://landsat.usgs.gov/tools_wrs-2_shapefile.php">WRS-2 descending grid</a>. </li>
 </ul>
 
-<h3>
-<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h3>
+<h3>Methods</h3>
 
-<h4>
-<a id="image-selection" class="anchor" href="#image-selection" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Image selection</em>
-</h4>
+<h4><em>Image selection</em></h4>
 
 <ul>
 <li>Landsat imagery was selected for <a href="www/landsat_scenes.html">12 scenes</a> for the time period between 2000 and 2016. One Landsat image was selected for each scene for each year, for a total of 204 Landsat scenes. Landsat 5 and Landsat 7 imagery was selected for years 2000 to 2011. Landsat 8 images were used for years 2013 to 2016.</li>
@@ -56,18 +49,14 @@
 <li>The <strong>complete list of the selected Landsat imagery</strong> can be seen <a href="https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/edit?usp=sharing" target="_blank">here</a>. This list also shows cloud cover, acquisition date and progress in image processing as well as a link to each scene thumbnail.</li>
 </ul>
 
-<h4>
-<a id="image-preparation" class="anchor" href="#image-preparation" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Image preparation</em>
-</h4>
+<h4><em>Image preparation</em></h4>
 
 <ul>
 <li>Landsat bands were stacked for each image using the <a href="http://claslite.carnegiescience.edu/en/">CLASlite</a> software (<a href="#asner_etal_2009">Asner et al., 2009</a>). An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/stackImgTable4csv.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/stack_2000_2014.csv" target="_blank">csv</a> file required for stacking the Landsat images through batch processing in CLASlite.</li>
-<li>Radiometric calibration and atmospheric correction were conducted on every Landsat image using CLASlite. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model (<a href="#vermote_etal_1997">Vermote et al., 1997</a>) to simulate the Earth's atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/reflectanceImgTable4csv.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/reflectance" target="_blank">csv</a> files required for image calibration through batch processing in CLASlite.<br>
-</li>
+<li>Radiometric calibration and atmospheric correction were conducted on every Landsat image using CLASlite. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model (<a href="#vermote_etal_1997">Vermote et al., 1997</a>) to simulate the Earth&#39;s atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/reflectanceImgTable4csv.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/reflectance" target="_blank">csv</a> files required for image calibration through batch processing in CLASlite.<br/></li>
 </ul>
 
-<h3>
-<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h3>
+<h3>Results</h3>
 
 <ul>
 <li>In progress.</li>
@@ -83,24 +72,19 @@
 
 <p>video</p>
 
-<h3>
-<a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h3>
+<h3>References</h3>
 
 <ul>
-<li>
-<a id="asner_etal_2009"></a>Asner, G.P., Knapp, D.E., Balaji, A., Paez-Acosta, G. 2009. Automated mapping of tropical deforestation and forest degradation: CLASlite. Journal of Applied Remote Sensing 3: 033543.</li>
-<li>
-<a id="vermote_etal_1997"></a>Vermote, E.F., Tanre, D., Deuze, J.L., Herman, M., Morcrette, J.-J. 1997. Second Simulation of the Satellite Signal in the Solar Spectrum, 6S: An Overview. IEEE Transactions on Geoscience and Remote Sensing 35 (3), 675-686.</li>
+<li><a id="asner_etal_2009"></a>Asner, G.P., Knapp, D.E., Balaji, A., Paez-Acosta, G. 2009. Automated mapping of tropical deforestation and forest degradation: CLASlite. Journal of Applied Remote Sensing 3: 033543.</li>
+<li><a id="vermote_etal_1997"></a>Vermote, E.F., Tanre, D., Deuze, J.L., Herman, M., Morcrette, J.-J. 1997. Second Simulation of the Satellite Signal in the Solar Spectrum, 6S: An Overview. IEEE Transactions on Geoscience and Remote Sensing 35 (3), 675-686.</li>
 </ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/amsantac/cuproject">CUproject</a> is maintained by <a href="https://github.com/amsantac">amsantac</a>.</span>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
 
     </section>
 
-  
   </body>
 </html>

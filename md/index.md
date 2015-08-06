@@ -2,7 +2,7 @@
 This website describes the activities conducted for each of the phases of this research.
 
 ### <a id="study-area"></a>Study area
-The [study area](www/map_llanos.html) was defined as the intersection of [Colombia international boundary](#IGAC_2015) and the Llanos savannas ecoregion ([Olson and Dinerstein 1998](#Olson_Dinerstein_1998), [Olson et al., 2001](#Olson_etal_2001)) identified by [World Wildlife Fund (WWF)](https://www.worldwildlife.org/publications/terrestrial-ecoregions-of-the-world).  
+The <a href="www/map_llanos.html" target="_blank">study area</a> was defined as the intersection of [Colombia international boundary](#IGAC_2015) and the Llanos savannas ecoregion ([Olson and Dinerstein 1998](#Olson_Dinerstein_1998), [Olson et al., 2001](#Olson_etal_2001)) identified by [World Wildlife Fund (WWF)](https://www.worldwildlife.org/publications/terrestrial-ecoregions-of-the-world).  
 
 <iframe id="map_llanos_emb" width=700 height=500 src="http://amsantac.github.io/cuproject/www/map_llanos.html"></iframe>
 

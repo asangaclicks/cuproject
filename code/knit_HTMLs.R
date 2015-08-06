@@ -1,6 +1,6 @@
 library(knitr)
 
-setwd("C:/amsantac/other/temp/borrar/cuproject")
+setwd("C:/amsantac/other/git/cuproject")
 
 ## files to be processed
 files <- c("index", "phase1")
@@ -9,7 +9,7 @@ footer <- "www/footer.html"
 
 for (file_i in files){ 
   
-  ## read and knit md file
+  ## knit md file
   mdFile <- paste0("md/", file_i, ".md")
   htmlFile <- paste0(file_i, ".html")
   knit2html(mdFile, htmlFile)

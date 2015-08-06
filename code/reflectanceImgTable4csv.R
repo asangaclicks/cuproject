@@ -1,6 +1,32 @@
-## function to create csv files to be input for batch processing in CLASlite to convert raw images to reflectance
-## @path : folder path where the yearly folders are stored
-## @year : year for which the images and parameters will be listed in the output csv file
+#' create tables for producing reflectance images using CLASlite
+#' 
+#' create tables to be saved as csv files that will be input for batch processing in CLASlite to convert raw images to reflectance
+#' @param path character string; folder path where the yearly folders are stored
+#' @param year integer; year for which the images and parameters will be listed in the output csv file
+#' @param GeoTIFF integer; 1 for output images in GeoTIFF format, 0 for ENVI binary format
+#' @param Reduce_masking integer; 0 for reduced masking, 1 for no reduced masking
+#' @param no_masking integer; 0 for masking, 1 for no masking
+#' @param fmask integer; 0 for no clouds/cloud shadows/snow/water masking using fmask, 1 for masking with fmask
+#' @param cldpix integer; dilated number of pixels for cloud with default value of 3 when masking with fmask 
+#' @param sdpix integer; dilated number of pixels for cloud shadow with default value of 3 when masking with fmask
+#' @param snpix integer; dilated number of pixels for snow with default values of 0 when masking with fmask
+#' @param cldprob numeric; cloud probability threshold with default value of 22.5 (range from 0-100) when masking with fmask
+#' @export reflectanceImgTable4csv
+#' @example 
+#' dontrun{
+#' ## set working directory: folder where the output csv files should be written
+#' setwd("C:/amsantac/PhD/Research/dissertation/processing/landsat/CLASliteCSVs")
+#' 
+#' ## parameters to run the function
+#' path <- "C:/amsantac/PhD/Research/dissertation/data/landsat/images"
+#' years <- 2000:2014
+#' ## run the function and create the corresponding csv files for the given years
+#' ## the reflectance images will be created without masking cloud/cloud shadows/water/snow
+#' for (year in years){
+#'   outDF <- reflectanceImgTable4csv(path, year, no_masking = 1)
+#'     write.table(outDF, paste0("reflectance_", year, ".csv"), row.names = FALSE, quote = FALSE, sep = ", ") 
+#'     }
+#' }   
 
 reflectanceImgTable4csv <- function(path, year, GeoTIFF = 0, Reduce_masking = 0, no_masking = 0, fmask = 0, 
                               cldpix = 3, sdpix = 3, snpix = 0, cldprob = 22.5){
@@ -87,17 +113,4 @@ reflectanceImgTable4csv <- function(path, year, GeoTIFF = 0, Reduce_masking = 0,
   }
   outDF[is.na(outDF)] <- ""
   return(outDF)
-}
-
-## set working directory: folder where the output csv files should be written
-setwd("C:/amsantac/PhD/Research/dissertation/processing/landsat/CLASliteCSVs")
-
-## parameters to run the function
-path <- "C:/amsantac/PhD/Research/dissertation/data/landsat/images"
-years <- 2000:2014
-
-## create the csv file for the given years
-for (year in years){
-  outDF <- reflectanceImgTable4csv(path, year)
-  write.table(outDF, paste0("reflectance_", year, ".csv"), row.names = FALSE, quote = FALSE, sep = ", ") 
 }

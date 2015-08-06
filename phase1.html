@@ -31,14 +31,14 @@
 <li><a href="#references">References</a></li>
 </ol>
 
-<h3>Data sources</h3>
+<h3><a id="data-sources"></a>Data sources</h3>
 
 <ul>
 <li>Landsat 5 TM, Landsat 7 ETM+ and Landsat 8 OLI/TIRS imagery from <a href="http://landsat.usgs.gov/index.php">USGS</a>.</li>
 <li><a href="http://landsat.usgs.gov/tools_wrs-2_shapefile.php">WRS-2 descending grid</a>. </li>
 </ul>
 
-<h3>Methods</h3>
+<h3><a id="methods"></a>Methods</h3>
 
 <h4><em>Image selection</em></h4>
 
@@ -56,7 +56,7 @@
 <li>Radiometric calibration and atmospheric correction were conducted on every Landsat image using CLASlite. CLASlite uses conversion factors (aka gains) to convert units of digital numbers into units of radiance. Then CLASlite uses the 6S radiative transfer model (<a href="#vermote_etal_1997">Vermote et al., 1997</a>) to simulate the Earth&#39;s atmospheric atmosphere in each satellite image and to covert the radiance values to surface reflectance. An <a href="https://github.com/amsantac/cuproject/blob/gh-pages/code/reflectanceImgTable4csv.R" target="_blank">R script</a> was used to create the <a href="https://github.com/amsantac/cuproject/blob/gh-pages/other/processing/landsat/CLASliteCSVs/reflectance" target="_blank">csv</a> files required for image calibration through batch processing in CLASlite.<br/></li>
 </ul>
 
-<h3>Results</h3>
+<h3><a id="results"></a>Results</h3>
 
 <ul>
 <li>In progress.</li>
@@ -72,7 +72,7 @@
 
 <p>video</p>
 
-<h3>References</h3>
+<h3><a id="references"></a>References</h3>
 
 <ul>
 <li><a id="asner_etal_2009"></a>Asner, G.P., Knapp, D.E., Balaji, A., Paez-Acosta, G. 2009. Automated mapping of tropical deforestation and forest degradation: CLASlite. Journal of Applied Remote Sensing 3: 033543.</li>

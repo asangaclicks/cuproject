@@ -1,7 +1,7 @@
 ## **Overview**
 This website describes the activities conducted for each of the phases of this research.
 
-### Study area
+### <a id="study-area"></a>Study area
 Description of the [study area](www/map_llanos.html).
 
 <iframe id="map_llanos_emb" width=700 height=500 src="http://amsantac.github.io/cuproject/www/map_llanos.html"></iframe>

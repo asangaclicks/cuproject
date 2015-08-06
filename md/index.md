@@ -7,13 +7,13 @@ The <a href="www/map_llanos.html" target="_blank">study area</a> was defined as 
 <iframe id="map_llanos_emb" width=700 height=500 src="http://amsantac.github.io/cuproject/www/map_llanos.html"></iframe>
 
 ### [Phase 1: Spatial dynamics and drivers of land-cover change](phase1.html)
-We've crafted some handsome templates for you to use. Please see the description of the [data sources](phase1.html#data-sources), [methods](phase1.html#methods) and [results](phase1.html#results) for this phase.
+This phase seeks to determine the socioeconomic and environmental factors driving land use and land cover change (LULCC). The [Phase 1 section](phase1.html) describes the [data sources](phase1.html#data-sources), [methods](phase1.html#methods) and [results](phase1.html#results) for this stage of the research.
 
 ### [Phase 2: Impacts of land-cover change](phase2.html)
-If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. Please see the description of the [data sources](phase2.html#data-sources), [methods](phase2.html#methods) and [results](phase2.html#results) for this phase.
+The goal of this phase is to assess the main consequences of LULCC on key ecosystem processes in the Llanos. The [Phase 2 section](phase2.html) describes  the [data sources](phase2.html#data-sources), [methods](phase2.html#methods) and [results](phase2.html#results) for this stage of the research.
 
 ### [Phase 3: Future scenarios of land-cover change and corresponding impacts](phase3.html)
-You can @amsantac a GitHub username. Please see the description of the [data sources](phase3.html#data-sources), [methods](phase3.html#methods) and [results](phase3.html#results) for this phase.
+Phase 3 will evaluate future scenarios of land-cover change and their impacts on the Llanos ecosystems. The [Phase 3 section](phase3.html) describes  the [data sources](phase3.html#data-sources), [methods](phase3.html#methods) and [results](phase3.html#results) for this stage of the research.
 
 ### References 
 * <a id="IGAC_2015"></a>Agustin Codazzi Geographic Institute (IGAC). 2015. Base data maps at 1:500.000 scale from the WMS service: http://geoservice.igac.gov.co/IGACwms?

@@ -9,7 +9,7 @@ The first phase of this research is the analysis of the spatial dynamic and driv
 
 ### <a id="data-sources"></a>Data sources 
 * Landsat 5 TM, Landsat 7 ETM+ and Landsat 8 OLI/TIRS imagery from [USGS](http://landsat.usgs.gov/index.php).
-* [WRS-2 descending grid](http://landsat.usgs.gov/tools_wrs-2_shapefile.php). 
+* [WRS-2 descending grid][wrs2_desc_grid]. 
 
 ### <a id="methods"></a>Methods 
 
@@ -34,9 +34,12 @@ Table 2
 
 <iframe id="lp_t2" frameborder="0" scrolling="no" width=700 height=400 marginheight="0" marginwidth="0" src="https://docs.google.com/spreadsheets/d/1HMtOeW7eo_KRrg6BND2eItIp7VS1p0e_YWS3_YHaYEM/pubhtml?gid=1521379850&single=true"></iframe>
 
-video
+
 
 
 ### <a id="references"></a>References 
 * <a id="asner_etal_2009"></a>Asner, G.P., Knapp, D.E., Balaji, A., Paez-Acosta, G. 2009. Automated mapping of tropical deforestation and forest degradation: CLASlite. Journal of Applied Remote Sensing 3: 033543.
 * <a id="vermote_etal_1997"></a>Vermote, E.F., Tanre, D., Deuze, J.L., Herman, M., Morcrette, J.-J. 1997. Second Simulation of the Satellite Signal in the Solar Spectrum, 6S: An Overview. IEEE Transactions on Geoscience and Remote Sensing 35 (3), 675-686.
+
+
+[wrs2_desc_grid]: http://landsat.usgs.gov/tools_wrs-2_shapefile.php

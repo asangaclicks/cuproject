@@ -1,8 +1,7 @@
-#' create tables for producing reflectance images using CLASlite
+#' create tables for producing atmospherically-corrected images using CLASlite
 #' 
 #' create tables to be saved as csv files that will be input for batch processing in CLASlite to convert raw images to reflectance
-#' @param path character string; folder path where the yearly folders are stored
-#' @param year integer; year for which the images and parameters will be listed in the output csv file
+#' @param character vector containing absolute paths to folders containing images to be processed
 #' @param GeoTIFF integer; 1 for output images in GeoTIFF format, 0 for ENVI binary format
 #' @param Reduce_masking integer; 0 for reduced masking, 1 for no reduced masking
 #' @param no_masking integer; 0 for masking, 1 for no masking
@@ -14,24 +13,18 @@
 #' @export reflectanceImgTable4csv
 #' @example 
 #' dontrun{
-#' ## set working directory: folder where the output csv files should be written
-#' setwd("C:/amsantac/PhD/Research/dissertation/processing/landsat/CLASliteCSVs")
+#'   ## set working directory: folder where the output csv files should be written
+#'   setwd("C:/amsantac/PhD/Research/dissertation/data/landsat/images/2000")
+#'   foldersList <- normalizePath(list.dirs(full.names = TRUE, recursive = FALSE))
 #' 
-#' ## parameters to run the function
-#' path <- "C:/amsantac/PhD/Research/dissertation/data/landsat/images"
-#' years <- 2000:2014
-#' ## run the function and create the corresponding csv files for the given years
-#' ## the reflectance images will be created without masking cloud/cloud shadows/water/snow
-#' for (year in years){
-#'   outDF <- reflectanceImgTable4csv(path, year, no_masking = 1)
-#'     write.table(outDF, paste0("reflectance_", year, ".csv"), row.names = FALSE, quote = FALSE, sep = ", ") 
-#'     }
-#' }   
+#'   ## run the function and create the corresponding csv file
+#'   ## the reflectance images will be created without masking cloud/cloud shadows/water/snow
+#'   outDF <- reflectanceImgTable4csv(foldersList, no_masking = 1)
+#'   write.table(outDF, "reflectance_2000.csv", row.names = FALSE, quote = FALSE, sep = ", ")
+#' }
 
-reflectanceImgTable4csv <- function(path, year, GeoTIFF = 0, Reduce_masking = 0, no_masking = 0, fmask = 0, 
-                              cldpix = 3, sdpix = 3, snpix = 0, cldprob = 22.5){
-  
-  foldersList <- list.files(paste0(path, "/", year))
+reflectanceImgTable4csv <- function(foldersList, GeoTIFF = 0, Reduce_masking = 0, no_masking = 0, fmask = 0, 
+                                    cldpix = 3, sdpix = 3, snpix = 0, cldprob = 22.5){
   
   outDF <- data.frame(matrix(data = NA, nrow = length(foldersList), ncol = 18))
   colnames(outDF) <- c("Input_FileName", "Date", "Time", "Gain_Settings", "Satellite", "Lead_File", "Therm_File",
@@ -44,12 +37,11 @@ reflectanceImgTable4csv <- function(path, year, GeoTIFF = 0, Reduce_masking = 0,
   
   for (folder in foldersList){
     
-    rawImg1 <- grep("raw", list.files(paste0(path, "/", year, "/", folder)), value = TRUE)[1] 
-    rawImg2 <- paste0(path, "/", year, "/", folder, "/", rawImg1)
-    outDF[i, "Input_FileName"] <- gsub("/", "\\", rawImg2, fixed = TRUE)
+    rawImg1 <- grep("raw", list.files(folder, full.names = TRUE), value = TRUE)[1] 
+    outDF[i, "Input_FileName"] <- gsub("/", "\\", rawImg1, fixed = TRUE)
     
-    mtlTxt <- grep("MTL.txt", list.files(paste0(path, "/", year, "/", folder)), value = TRUE)  
-    mtl <- readLines(paste0(path, "/", year, "/", folder, "/", mtlTxt))
+    mtlTxt <- grep("MTL.txt", list.files(folder, full.names = TRUE), value = TRUE)  
+    mtl <- readLines(mtlTxt)
     
     ## extract acquisition date
     date1 <- strsplit(mtl[grep("DATE_ACQUIRED", mtl)], "= ")[[1]][2]
@@ -59,7 +51,7 @@ reflectanceImgTable4csv <- function(path, year, GeoTIFF = 0, Reduce_masking = 0,
     time1 <- strsplit(mtl[grep("SCENE_CENTER_TIME", mtl)], "= ")[[1]][2]
     time2 <- paste(unlist(strsplit(time1, ":"))[1:2], collapse = "")
     outDF[i, "Time"] <- gsub("\"", "", time2)
-
+    
     ## extract satellite id
     sid1 <- strsplit(mtl[grep("SPACECRAFT_ID", mtl)], "= ")[[1]][2]
     sid2 <- gsub("\"", "", sid1)
@@ -93,16 +85,14 @@ reflectanceImgTable4csv <- function(path, year, GeoTIFF = 0, Reduce_masking = 0,
     if(sys2 == "NLAPS") outDF[i, "Proc_sys"] <- 1
     
     ## extract thermal file name
-    ThermImg1 <- grep("therm", list.files(paste0(path, "/", year, "/", folder)), value = TRUE)[1]
-    ThermImg2 <- paste0(path, "/", year, "/", folder, "/", ThermImg1)
-    outDF[i, "Therm_File"] <- gsub("/", "\\", ThermImg2, fixed = TRUE)
+    ThermImg1 <- grep("therm", list.files(folder, full.names = TRUE), value = TRUE)[1]
+    outDF[i, "Therm_File"] <- gsub("/", "\\", ThermImg1, fixed = TRUE)
     
     ## extract quality image file
     ## for Landsat 8
     if (Satellitei == 0){
-      QAImg1 <- grep("_QA", list.files(paste0(path, "/", year, "/", folder)), value = TRUE)[1]
-      QAImg2 <- paste0(path, "/", year, "/", folder, "/", QAImg1)
-      outDF[i, "QA_File"] <- gsub("/", "\\", QAImg2, fixed = TRUE)
+      QAImg1 <- grep("_QA", list.files(folder, full.names = TRUE), value = TRUE)[1]
+      outDF[i, "QA_File"] <- gsub("/", "\\", QAImg1, fixed = TRUE)
     }
     
     ## output file name

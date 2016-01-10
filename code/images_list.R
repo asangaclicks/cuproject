@@ -31,3 +31,5 @@ lines <- c(lines, year, paste0("var image", 1:dim(subyear)[1], " = ee.Image('LED
 }
 lines
 write.csv(lines, "lines.csv", quote = FALSE, row.names = FALSE)
+
+## PARA LANDSAT 8 LAS IMAGENES NO SON SR, TIENEN QUE SER TOA

@@ -1,0 +1,90 @@
+---
+title: "Working with KML"
+author: "Ali"
+date: "Friday, June 12, 2015"
+output: html_document
+---
+
+First read the shapefile, which must be projected in WGS84, using rgdal, and export it as KML:
+
+```{r, eval = FALSE}
+library(rgdal)
+setwd("C:/amsantac/PhD/Research/dissertation/data/ecosistemas/temp cobertura")
+landcover <- readOGR("landcover_ecomap_wgs84.shp", "landcover_ecomap_wgs84")
+writeOGR(landcover, "landcover_ecomap_KML.KML", "landcover_ecomap_KML", driver="KML")
+```
+
+In this case it is necessary to define the datum:
+
+```{r, eval = FALSE}
+proj4string(landcover)
+proj4string(landcover) <- CRS("+proj=longlat +ellps=GRS80 +datum=WGS84")
+```
+
+The map can be plotted and optionally exported with `plotKML`:
+
+```{r, eval = FALSE}
+library(plotKML)
+plotKML(landcover["Cobertura"])
+```
+
+`plotKML` writes a .kml file that will be stored in the working directory and then opens the .kml file in Google Earth. A file name can be added to the command. If not, `plotKML` will give the file a default name.  
+
+### KML web mapping from Google Drive
+
+The HTML page including javascript code using the Google Maps API is based on [this example](https://developers.google.com/maps/documentation/javascript/examples/layer-kml?hl=es):
+
+To make the KML/KMZ available on the web:
+
+1. Set the root folder to share in the public. Right click on the folder > Share > Public on the web
+2. Upload .html file in the directory > Open it > Preview
+3. That's the url of the folder. For example, here is the Google Drive path of an example folder storing the html file:
+
+https://drive.google.com/drive/u/0/folders/0B-xwvF12Yt_OY180NDluS0plY1E/0B-xwvF12Yt_OfjJuZWE0VGg4dGFuMEZhYlZVMUJCSF9aaDdJN2dqZG5QUEYxbHdDT0sxaXM
+
+The advantage of using the folder path is that this avoids to change the link if the .html file changes. Now it is necessary to use `https://googledrive.com/host/` instead of `https://drive.google.com/`. So take the character string from the previous path (after the last slash /), and join it with `https://googledrive.com/host/`. Then add the name of the html file:
+
+https://googledrive.com/host/0B-
+xwvF12Yt_OfjJuZWE0VGg4dGFuMEZhYlZVMUJCSF9aaDdJN2dqZG5QUEYxbHdDT0sx
+aXM/temp1.html
+
+For this example the kmz file url would be:
+
+https://googledrive.com/host/0B-
+xwvF12Yt_OfjJuZWE0VGg4dGFuMEZhYlZVMUJCSF9aaDdJN2dqZG5QUEYxbHdDT0sx
+aXM/kml/cta1.kmz
+
+This previous path can be used in the .html file to retrieve the .kml file using the Google Maps API:
+
+```{r, eval = FALSE}
+function initialize() {
+  var chicago = new google.maps.LatLng(4.626828,-70.685038);
+  var mapOptions = {
+    zoom: 11,
+    center: chicago
+  }
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var ctaLayer = new google.maps.KmlLayer({
+    // url: 'http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml'
+    //url: 'https://googledrive.com/host/0B-xwvF12Yt_OfjJuZWE0VGg4dGFuMEZhYlZVMUJCSF9aaDdJN2dqZG5QUEYxbHdDT0sxaXM/kml/cta2.kml'
+    //url: 'https://googledrive.com/host/0B-xwvF12Yt_OfjJuZWE0VGg4dGFuMEZhYlZVMUJCSF9aaDdJN2dqZG5QUEYxbHdDT0sxaXM/kml/landcover__Cobertura__.kmZ'
+    url: 'https://googledrive.com/host/0B-xwvF12Yt_OfjJuZWE0VGg4dGFuMEZhYlZVMUJCSF9aaDdJN2dqZG5QUEYxbHdDT0sxaXM/kml/cta1.kmZ'
+  });
+  ctaLayer.setMap(map);
+}
+```
+
+To find the (long/lat) coordinates center of the boundary box use:
+
+```{r, eval = FALSE}
+apply(bbox(landcover), 1, mean)
+```
+
+### KML web mapping with Google My Maps 
+Una segunda opcion es crear el mapa con [Google My Maps](https://www.google.com/mymaps) e importar el kml/kmz desde Google  Drive. Esto crea un nuevo archivo de Google My Maps en Google Drive. Este archivo se debe compartir (como publico o con quien tenga el link):
+https://www.google.com/maps/d/u/0/edit?mid=z5_Pdd1roXDA.km6qbkeFdLFA
+
+Otro usuario va a ver el link siguiente:
+https://www.google.com/maps/d/u/0/viewer?mid=z5_Pdd1roXDA.km6qbkeFdLFA
